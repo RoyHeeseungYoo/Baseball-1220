@@ -20,6 +20,12 @@ public:
 		if (guessNumber == question) {
 			return { true, 3, 0 };
 		}
+
+		if (guessNumber[0] == question[0] &&
+			guessNumber[1] == question[2] &&
+			guessNumber[2] == question[1]) {
+			return { false, 1, 2 };
+		}
 		
 		return { false, getStrikes(guessNumber), 0};
 	}
